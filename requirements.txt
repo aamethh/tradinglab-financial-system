@@ -1,0 +1,18 @@
+# Data
+pandas>=2.0
+numpy>=1.26
+openpyxl>=3.1
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+
+# Database
+sqlalchemy>=2.0
+pyodbc>=5.0
+
+# Reporting
+reportlab>=4.0
+
+# Utilities
+python-dotenv>=1.0
