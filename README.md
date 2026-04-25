@@ -3,6 +3,14 @@
 
 ---
 
+## Live Portfolio
+
+- Core System → https://github.com/aamethh/tradinglab-financial-system
+- Fintech Case Study → https://github.com/aamethh/grupo-tx-fintech-analysis
+- Banking Equity Research → https://github.com/aamethh/financial-analysis-gfbg
+
+---
+
 ## Executive Summary
 
 TradingLab is a modular financial analysis system that replicates core workflows used at asset management firms and investment banks: structured data ingestion, ratio-based performance analysis, probabilistic revenue forecasting, and dashboard-ready outputs.
