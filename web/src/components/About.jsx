@@ -15,8 +15,8 @@ const STACK = [
 ];
 
 const STANDARDS = [
-  'Modelos DCF de 3 escenarios con tabla de sensibilidad',
-  'Simulación GBM reproducible con semilla fija',
+  'Modelos DCF de 3 escenarios con tabla de sensibilidad WACC × TGR',
+  'Simulación GBM reproducible con semilla fija (10.000 trayectorias)',
   'Pipelines de datos auditables Excel → SQL → Python',
   'Informes estructurados en inglés y español',
   'Arquitectura modular reutilizable entre proyectos',
@@ -38,7 +38,7 @@ export default function About() {
         >
           <p className="text-[10px] tracking-[0.2em] uppercase text-slate-600 mb-3">Acerca</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
-            TradingLab
+            Aameth Quant
           </h2>
         </motion.div>
 
@@ -52,16 +52,23 @@ export default function About() {
             className="flex flex-col gap-6"
           >
             <p className="text-slate-300 text-base leading-relaxed">
-              TradingLab es una plataforma de análisis financiero cuantitativo construida con estándares
-              de gestoras institucionales de primer nivel (BlackRock, JP Morgan). El sistema integra
-              modelos propietarios de valoración, simulación estocástica y pipelines de datos en un
-              entorno reproducible y auditables.
+              Desarrollo modelos financieros desde cero para entender cómo se genera valor
+              en una empresa y qué escenarios justifican su valoración.
             </p>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Cada análisis parte de datos primarios (informes 10-K, 10-Q), aplica ratios calculados
-              desde cero y construye un modelo DCF de tres escenarios con tabla de sensibilidad
-              WACC × TGR. El objetivo no es complejidad: es claridad institucional.
+              Trabajo con datos reales (10-K, 10-Q), construyendo proyecciones, modelos DCF
+              y simulaciones de riesgo para traducir información financiera en decisiones claras.
             </p>
+
+            {/* Institutional note */}
+            <div className="inline-flex items-start gap-2.5 px-4 py-3 rounded-lg border border-white/[0.05] bg-white/[0.02]">
+              <svg className="w-3.5 h-3.5 text-blue-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p className="text-slate-500 text-xs leading-relaxed">
+                Construido bajo estándares y metodologías utilizadas en análisis financiero institucional.
+              </p>
+            </div>
 
             <div className="pt-2">
               <p className="text-[10px] tracking-[0.18em] uppercase text-slate-600 mb-4">
@@ -115,6 +122,7 @@ export default function About() {
                   'GBM 10k rutas',
                   'Sens. WACC × TGR',
                   'Bilingüe EN / ES',
+                  'aamethquant.com',
                 ].map((tag) => (
                   <span
                     key={tag}

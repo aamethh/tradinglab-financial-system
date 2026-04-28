@@ -34,10 +34,10 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 group">
           <div className="w-7 h-7 rounded border border-blue-500/40 bg-blue-500/10 flex items-center justify-center">
-            <span className="text-blue-400 text-xs font-bold tracking-tight">TL</span>
+            <span className="text-blue-400 text-xs font-bold tracking-tight">AQ</span>
           </div>
           <span className="text-slate-100 text-sm font-semibold tracking-wide">
-            TradingLab
+            Aameth Quant
           </span>
         </a>
 

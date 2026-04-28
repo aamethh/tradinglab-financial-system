@@ -68,23 +68,28 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 0.03, 0.26, 1] }}
           className="flex flex-col gap-2"
         >
-          <h1 className="text-5xl md:text-7xl font-semibold text-white leading-[1.08] tracking-tight">
-            Análisis Financiero
+          <h1 className="text-4xl md:text-6xl font-semibold text-white leading-[1.1] tracking-tight">
+            Desarrollo modelos financieros
           </h1>
-          <h1 className="text-5xl md:text-7xl font-light text-slate-400 leading-[1.08] tracking-tight">
-            de nivel institucional
+          <h1 className="text-4xl md:text-6xl font-light text-slate-400 leading-[1.1] tracking-tight">
+            con rigor cuantitativo.
           </h1>
         </motion.div>
 
         {/* Subheading */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="text-slate-500 text-base md:text-lg max-w-xl leading-relaxed"
+          className="flex flex-col gap-3 max-w-2xl"
         >
-          Modelos cuantitativos &middot; Simulación Monte Carlo &middot; Valoración DCF &middot; Ratios institucionales
-        </motion.p>
+          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+            Para estimar el valor intrínseco de empresas y analizar escenarios de inversión a partir de datos reales.
+          </p>
+          <p className="text-slate-600 text-sm">
+            DCF &middot; Simulación Monte Carlo &middot; Análisis fundamental estructurado
+          </p>
+        </motion.div>
 
         {/* Metrics row */}
         <motion.div

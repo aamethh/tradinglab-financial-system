@@ -302,7 +302,7 @@ export default function Analysis() {
             <div className="shrink-0 text-right">
               <p className="text-[9px] text-slate-600 uppercase tracking-widest mb-1">Fuente</p>
               <p className="text-xs text-slate-500">MSFT 10-K FY2021–FY2024</p>
-              <p className="text-xs text-slate-500">TradingLab GBM Engine</p>
+              <p className="text-xs text-slate-500">Aameth Quant GBM Engine</p>
             </div>
           </div>
         </motion.div>
