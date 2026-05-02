@@ -84,7 +84,7 @@ export default function Hero() {
           className="flex flex-col gap-3 max-w-2xl"
         >
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Para estimar el valor intrínseco de empresas y analizar escenarios de inversión a partir de datos reales.
+            Para estimar el valor intrínseco de empresas y analizar escenarios de inversión con rigor cuantitativo.
           </p>
           <p className="text-slate-600 text-sm">
             DCF &middot; Simulación Monte Carlo &middot; Análisis fundamental estructurado
