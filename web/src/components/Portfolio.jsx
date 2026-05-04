@@ -53,8 +53,8 @@ const FINANCIAL = [
     desc: 'Análisis de captación, colocación y spread de tasas. Segmento de crédito personal y financiamiento de vehículos en el mercado panameño.',
   },
   {
-    ticker: 'TIX',
-    name: 'Grupo TIX',
+    ticker: 'GRPOTX',
+    name: 'Grupo TX, S.A.',
     sector: 'Conglomerado · Panamá',
     status: 'pending',
     desc: 'Valoración de conglomerado con análisis de subsidiarias, estructura de capital y descuento por holding aplicado al valor intrínseco consolidado.',

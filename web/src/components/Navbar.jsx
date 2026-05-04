@@ -1,23 +1,28 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
-const LINKS = [
-  { label: 'Análisis', href: '#analisis' },
-  { label: 'Capacidades', href: '#capacidades' },
-  { label: 'Portafolio', href: '#portafolio' },
-  { label: 'Acerca', href: '#acerca' },
-  { label: 'Contacto', href: '#contacto' },
+const SECTIONS = [
+  { label: 'Análisis',    id: 'analisis' },
+  { label: 'Capacidades', id: 'capacidades' },
+  { label: 'Portafolio',  id: 'portafolio' },
+  { label: 'Acerca',      id: 'acerca' },
+  { label: 'Contacto',    id: 'contacto' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname }            = useLocation();
+  const isHome                  = pathname === '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const sectionHref = (id) => isHome ? `#${id}` : `/#${id}`;
 
   return (
     <motion.header
@@ -31,25 +36,26 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="w-7 h-7 rounded border border-blue-500/40 bg-blue-500/10 flex items-center justify-center">
             <span className="text-blue-400 text-xs font-bold tracking-tight">AQ</span>
           </div>
           <span className="text-slate-100 text-sm font-semibold tracking-wide">
             Aameth Quant
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {LINKS.map((link) => (
+          {SECTIONS.map((s) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={s.id}
+              href={sectionHref(s.id)}
               className="text-slate-400 hover:text-slate-100 text-sm transition-colors duration-200"
             >
-              {link.label}
+              {s.label}
             </a>
           ))}
         </nav>
@@ -65,14 +71,14 @@ export default function Navbar() {
             GitHub
           </a>
           <a
-            href="#analisis"
+            href={sectionHref('analisis')}
             className="px-4 py-1.5 rounded border border-blue-500/30 bg-blue-500/10 text-blue-300 text-sm font-medium hover:bg-blue-500/20 hover:border-blue-400/40 transition-all duration-200"
           >
             Ver análisis
           </a>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden text-slate-400 hover:text-slate-100 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -94,14 +100,14 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden border-t border-white/[0.05] bg-[#0B0F19]/95 backdrop-blur-lg px-6 py-4 flex flex-col gap-4"
         >
-          {LINKS.map((link) => (
+          {SECTIONS.map((s) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={s.id}
+              href={sectionHref(s.id)}
               onClick={() => setMenuOpen(false)}
               className="text-slate-400 hover:text-slate-100 text-sm transition-colors"
             >
-              {link.label}
+              {s.label}
             </a>
           ))}
         </motion.div>
