@@ -116,11 +116,13 @@ export default function Analysis() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] tracking-widest uppercase text-slate-600 mr-1">Recomendación</span>
-              <span className="px-2.5 py-1 rounded border border-blue-500/25 bg-blue-500/[0.07] text-blue-300 text-xs font-medium tracking-wide">
-                COMPRAR
+              {/* Threshold institucional: BUY requiere upside >15%, HOLD 0-15%, SELL/AVOID <0%.
+                  Upside +1% NO califica como BUY bajo ningún criterio del oficio. */}
+              <span className="px-2.5 py-1 rounded border border-amber-500/25 bg-amber-500/[0.07] text-amber-300 text-xs font-medium tracking-wide">
+                HOLD
               </span>
               <span className="px-2.5 py-1 rounded border border-white/10 text-slate-400 text-xs">
-                Convicción Alta
+                Convicción Media
               </span>
             </div>
           </div>
