@@ -1,11 +1,12 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import useCountUp from '../hooks/useCountUp';
 
 const METRICS = [
-  { label: 'Ingresos FY2024', value: 245, suffix: 'B', prefix: '$', sub: 'Microsoft 10-K' },
-  { label: 'Valor Intrínseco Base', value: 424, suffix: '', prefix: '$', sub: 'DCF ponderado / acción' },
-  { label: 'Margen EBITDA', value: 51, suffix: '%', prefix: '', sub: 'FY2024 · Clase mundial' },
+  { label: 'Coverages activos',       value: 4,   suffix: '',  prefix: '', sub: 'GRPOTX · BGFG · FGIN · MSFT' },
+  { label: 'Verticales cubiertas',    value: 3,   suffix: '',  prefix: '', sub: 'Forensic · FIG · Fixed Income' },
+  { label: 'DSO detectado en GRPOTX', value: 669, suffix: 'd', prefix: '', sub: 'Quality of Cash · Schilit Framework' },
 ];
 
 function MetricCard({ label, value, suffix, prefix, sub, delay }) {
@@ -50,7 +51,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
 
-        {/* Status badge */}
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,36 +59,24 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/[0.07] text-blue-400 text-xs tracking-wider"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse-dot" />
-          Análisis activo: MSFT &mdash; Abril 2026
+          Coverage activa: 4 emisores · 3 verticales · Latinex + NASDAQ
         </motion.div>
 
-        {/* Heading */}
+        {/* H1 */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 0.03, 0.26, 1] }}
-          className="flex flex-col gap-2"
+          className="flex flex-col gap-3"
         >
           <h1 className="text-4xl md:text-6xl font-semibold text-white leading-[1.1] tracking-tight">
-            Desarrollo modelos financieros
+            Equity Research Independiente
           </h1>
-          <h1 className="text-4xl md:text-6xl font-light text-slate-400 leading-[1.1] tracking-tight">
-            con rigor cuantitativo.
-          </h1>
-        </motion.div>
-
-        {/* Subheading */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col gap-3 max-w-2xl"
-        >
-          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Para estimar el valor intrínseco de empresas y analizar escenarios de inversión con rigor cuantitativo.
+          <p className="font-mono text-sm md:text-base text-slate-500 tracking-wide">
+            Forensic Equity · Financial Institutions · Fixed Income · US Megacap
           </p>
-          <p className="text-slate-600 text-sm">
-            DCF &middot; Simulación Monte Carlo &middot; Análisis fundamental estructurado
+          <p className="text-slate-500 text-sm italic">
+            Tesis basadas en flujo de caja real, no en narrativa corporativa.
           </p>
         </motion.div>
 
@@ -110,15 +99,19 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.85 }}
           className="flex flex-col sm:flex-row items-center gap-3"
         >
-          <motion.a
-            href="#analisis"
+          <motion.div
             whileHover={{ y: -2, boxShadow: '0 8px 30px rgba(37,99,235,0.25)' }}
             whileTap={{ y: 0 }}
             transition={{ duration: 0.15 }}
-            className="px-6 py-2.5 rounded bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors duration-200"
+            className="rounded"
           >
-            Ver análisis MSFT
-          </motion.a>
+            <Link
+              to="/research/grupo-tx"
+              className="block px-6 py-2.5 rounded bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors duration-200"
+            >
+              Ver coverage forense GRPOTX
+            </Link>
+          </motion.div>
           <motion.a
             href="https://github.com/aamethh/tradinglab-financial-system"
             target="_blank"
@@ -131,6 +124,7 @@ export default function Hero() {
             Repositorio GitHub
           </motion.a>
         </motion.div>
+
       </div>
 
       {/* Scroll indicator */}

@@ -4,22 +4,39 @@ import { motion, useInView } from 'framer-motion';
 const EASE = [0.22, 0.03, 0.26, 1];
 
 const STACK = [
-  { name: 'Python 3.11', role: 'Motor analítico' },
-  { name: 'pandas / NumPy', role: 'Manipulación de datos' },
-  { name: 'SQLAlchemy', role: 'Conector SQL Server' },
+  { name: 'Python 3.11',          role: 'Motor analítico' },
+  { name: 'pandas / NumPy',       role: 'Manipulación de datos' },
+  { name: 'SQLAlchemy',           role: 'Conector SQL Server' },
   { name: 'Matplotlib / Seaborn', role: 'Visualización' },
-  { name: 'reportlab', role: 'Generación de PDF' },
-  { name: 'React 18', role: 'Interfaz web' },
-  { name: 'Tailwind CSS', role: 'Sistema de diseño' },
-  { name: 'Framer Motion', role: 'Animaciones' },
+  { name: 'reportlab',            role: 'Generación de PDF' },
+  { name: 'React 18',             role: 'Interfaz web' },
+  { name: 'Tailwind CSS',         role: 'Sistema de diseño' },
+  { name: 'Framer Motion',        role: 'Animaciones' },
+];
+
+const PRINCIPLES = [
+  {
+    label: 'Primero — el cash flow precede al P&L',
+    text: 'Las utilidades reportadas pueden reflejar política contable; el flujo de caja operativo refleja realidad. Empezar el análisis por el FCO antes que por ingresos cambia las conclusiones.',
+  },
+  {
+    label: 'Segundo — la calidad de utilidades importa más que el crecimiento',
+    text: 'Aplico framework Schilit: ratio FCO/UN, evolución de DSO, descomposición de patrimonio operativo vs cosmético, lectura crítica de Asuntos de Énfasis del auditor.',
+  },
+  {
+    label: 'Tercero — las tesis se revisan con datos',
+    text: 'Cuando los estados financieros auditados contradicen mi análisis inicial, lo digo abiertamente y ajusto la recomendación. La disciplina de matar tesis equivocadas es más valiosa que tener razón al primer intento.',
+  },
 ];
 
 const STANDARDS = [
+  'Análisis forense de calidad de utilidades (FCO/UN, DSO, partes relacionadas)',
   'Modelos DCF de 3 escenarios con tabla de sensibilidad WACC × TGR',
-  'Simulación GBM reproducible con semilla fija (10.000 trayectorias)',
-  'Pipelines de datos auditables Excel → SQL → Python',
-  'Informes estructurados en inglés y español',
-  'Arquitectura modular reutilizable entre proyectos',
+  'Simulación Monte Carlo GBM (10.000 trayectorias, semilla fija)',
+  'Modelos estocásticos para activos con incertidumbre alta',
+  'Análisis comparativo de fondos de renta fija',
+  'Investment memos formato sell-side institucional',
+  'Reconciliación con Asuntos de Énfasis del auditor cuando aplica',
 ];
 
 export default function About() {
@@ -44,7 +61,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-          {/* Left: description */}
+          {/* Left: filosofía + estándares */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -52,24 +69,32 @@ export default function About() {
             className="flex flex-col gap-6"
           >
             <p className="text-slate-300 text-base leading-relaxed">
-              Desarrollo modelos financieros desde cero para entender cómo se genera valor
-              en una empresa y qué escenarios justifican su valoración.
-            </p>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Trabajo con datos reales (10-K, 10-Q), construyendo proyecciones, modelos DCF
-              y simulaciones de riesgo para traducir información financiera en decisiones claras.
+              Equity research independiente con cobertura multi-asset en mercados
+              panameño y selectos megacaps US.
             </p>
 
-            {/* Institutional note */}
-            <div className="inline-flex items-start gap-2.5 px-4 py-3 rounded-lg border border-white/[0.05] bg-white/[0.02]">
-              <svg className="w-3.5 h-3.5 text-blue-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-slate-500 text-xs leading-relaxed">
-                Construido bajo estándares y metodologías utilizadas en análisis financiero institucional.
+            {/* 3 principios */}
+            <div className="flex flex-col gap-5">
+              <p className="text-[10px] tracking-[0.18em] uppercase text-slate-600">
+                Principios operativos
               </p>
+              {PRINCIPLES.map((p) => (
+                <div key={p.label} className="flex flex-col gap-1.5">
+                  <span className="font-mono text-xs text-blue-400/80">{p.label}</span>
+                  <p className="text-slate-500 text-sm leading-relaxed">{p.text}</p>
+                </div>
+              ))}
             </div>
 
+            <p className="text-slate-500 text-sm leading-relaxed">
+              La cobertura abarca tres verticales complementarios: forensic equity
+              research (GRPOTX), financial institutions analysis (BGFG), y fixed
+              income comparative coverage (FGIN). Esta amplitud refleja una visión
+              multi-asset coherente con prácticas de boutique research firms y
+              family offices.
+            </p>
+
+            {/* Estándares */}
             <div className="pt-2">
               <p className="text-[10px] tracking-[0.18em] uppercase text-slate-600 mb-4">
                 Estándares de entrega
@@ -89,7 +114,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right: tech stack */}
+          {/* Right: tech stack — sin cambios */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -121,8 +146,9 @@ export default function About() {
                   'Gordon Growth + Múltiplo',
                   'GBM 10k rutas',
                   'Sens. WACC × TGR',
-                  'Bilingüe EN / ES',
-                  'aamethquant.com',
+                  'Schilit Framework',
+                  'Forensic Accounting',
+                  'Frontier Markets',
                 ].map((tag) => (
                   <span
                     key={tag}
@@ -134,6 +160,7 @@ export default function About() {
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
