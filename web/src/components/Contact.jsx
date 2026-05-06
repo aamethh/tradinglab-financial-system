@@ -126,7 +126,7 @@ export default function Contact() {
           </motion.a>
 
           <motion.a
-            href="https://linkedin.com/in/aameth"
+            href="https://www.linkedin.com/in/ameth-espinosa-2b7181273/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -2 }}
