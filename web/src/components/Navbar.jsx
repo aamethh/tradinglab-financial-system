@@ -58,6 +58,12 @@ export default function Navbar() {
               {s.label}
             </a>
           ))}
+          <Link to="/servicios" className="text-slate-400 hover:text-slate-100 text-sm transition-colors duration-200">
+            Servicios
+          </Link>
+          <Link to="/work-with-me" className="text-slate-400 hover:text-slate-100 text-sm transition-colors duration-200">
+            Work With Me
+          </Link>
         </nav>
 
         {/* CTA */}
@@ -110,6 +116,12 @@ export default function Navbar() {
               {s.label}
             </a>
           ))}
+          <Link to="/servicios" onClick={() => setMenuOpen(false)} className="text-slate-400 hover:text-slate-100 text-sm transition-colors">
+            Servicios
+          </Link>
+          <Link to="/work-with-me" onClick={() => setMenuOpen(false)} className="text-slate-400 hover:text-slate-100 text-sm transition-colors">
+            Work With Me
+          </Link>
         </motion.div>
       )}
     </motion.header>
