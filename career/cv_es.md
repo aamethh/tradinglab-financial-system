@@ -29,7 +29,7 @@ y github.com/aamethh.
 
 ## Educación
 - **Licenciatura en Ciberseguridad (en curso, 2.º año)** — Universidad Tecnológica de Panamá
-- **Bachiller en Ciencias** — Colegio Coronel Segundo de Villarreal
+- **Bachiller en Ciencias** — instituto Coronel Segundo de Villarreal
 
 ## Certificación
 - **Programa de Alta Especialización en Finanzas Corporativas Aplicado con Softwares e
