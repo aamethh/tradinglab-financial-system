@@ -7,3 +7,7 @@ venv/
 Thumbs.db
 *.env
 secrets.py
+
+# AmethQuant app local
+app/amethquant.db
+app/uploads/

@@ -112,6 +112,14 @@ export default function Hero() {
               Ver coverage forense GRPOTX
             </Link>
           </motion.div>
+          <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }} transition={{ duration: 0.15 }}>
+            <Link
+              to="/servicios"
+              className="block px-6 py-2.5 rounded border border-white/10 hover:border-white/20 text-slate-300 hover:text-white text-sm font-medium transition-all duration-200"
+            >
+              Servicios y precios
+            </Link>
+          </motion.div>
           <motion.a
             href="https://github.com/aamethh/tradinglab-financial-system"
             target="_blank"
