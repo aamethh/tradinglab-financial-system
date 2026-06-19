@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 const OFFICIAL = [
   {
     title: 'Custom Equity Research',
-    price: 'Desde $1,500',
     timeline: '2 semanas',
     accent: 'border-blue-500/25 bg-blue-500/[0.05]',
     labelColor: 'text-blue-400',
@@ -18,7 +17,6 @@ const OFFICIAL = [
   },
   {
     title: 'Coverage Retainer',
-    price: 'Desde $800/mes',
     timeline: 'Continuo',
     accent: 'border-emerald-500/25 bg-emerald-500/[0.05]',
     labelColor: 'text-emerald-400',
@@ -35,42 +33,36 @@ const OFFICIAL = [
 const PACKAGES = [
   {
     title: 'Forensic Financial Screen',
-    price: '$600',
     timeline: '5 días hábiles',
     scope: 'Checklist Schilit de 12 puntos sobre 1 empresa: FCO/UN, DSO, one-time gains, capitalización, patrimonio operativo, informe del auditor.',
     audience: 'Family offices · acreedores · due diligence preliminar',
   },
   {
     title: 'Financial Statement Red Flags',
-    price: '$350',
     timeline: '3 días hábiles',
     scope: 'Revisión rápida de banderas en estados financieros con semáforo por dimensión.',
     audience: 'Abogados M&A · contadores · inversionistas',
   },
   {
     title: 'Credit / Solvency Review',
-    price: '$800',
     timeline: '1 semana',
     scope: 'Capacidad de pago: cobertura de intereses, DSCR, liquidez, vencimientos, calidad de caja.',
     audience: 'Acreedores · proveedores · tesorerías',
   },
   {
     title: 'Panama Market Research',
-    price: '$1,200',
     timeline: '2 semanas',
     scope: 'Research sectorial o de emisor Latinex/Panamá con comparables regionales y fuentes primarias (SBP, Latinex, SMV).',
     audience: 'Fondos · family offices · entrantes al mercado',
   },
   {
     title: 'AI-assisted Research Automation',
-    price: 'Desde $1,000',
     timeline: 'Por proyecto',
     scope: 'Pipelines de extracción de PDFs, scoring forense automatizado y generación de memos — la infraestructura de AmethQuant adaptada a tu operación.',
     audience: 'Fintechs · fondos pequeños · research shops',
   },
   {
     title: 'Custom Dashboards for Investors',
-    price: 'Desde $700',
     timeline: '1–2 semanas',
     scope: 'Dashboard Power BI o web sobre tu cartera, conectado al pipeline Excel → SQL → Python → BI.',
     audience: 'Inversionistas · gestores de cartera',
@@ -129,7 +121,6 @@ export default function Services() {
                 <div className="flex items-start justify-between">
                   <p className={`text-sm font-medium ${s.labelColor}`}>{s.title}</p>
                   <div className="text-right shrink-0">
-                    <p className="font-mono text-lg text-white font-semibold">{s.price}</p>
                     <p className="text-[10px] text-slate-600">{s.timeline}</p>
                   </div>
                 </div>
@@ -153,7 +144,6 @@ export default function Services() {
               <div key={p.title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-white text-sm font-medium leading-snug">{p.title}</p>
-                  <p className="font-mono text-sm text-blue-300 shrink-0">{p.price}</p>
                 </div>
                 <p className="text-[10px] text-slate-600 font-mono">{p.timeline}</p>
                 <p className="text-slate-500 text-xs leading-relaxed flex-1">{p.scope}</p>
