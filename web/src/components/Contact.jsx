@@ -10,7 +10,6 @@ const SERVICES = [
       'Análisis forense profundo de un emisor.',
       'Entregable: investment memo institucional + modelo DCF + dashboard.',
       'Timeline: 2 semanas.',
-      'Desde $1,500.',
     ],
     accent: 'border-blue-500/25 bg-blue-500/[0.05]',
     labelColor: 'text-blue-400',
@@ -20,7 +19,6 @@ const SERVICES = [
     body: [
       'Monitoring continuo de 3–5 emisores.',
       'Updates trimestrales + alerts ante eventos materiales.',
-      'Desde $800/mes.',
     ],
     accent: 'border-emerald-500/25 bg-emerald-500/[0.05]',
     labelColor: 'text-emerald-400',
